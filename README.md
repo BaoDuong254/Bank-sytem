@@ -1,6 +1,6 @@
 # Bank system
 
-This is a project to review my knowledge of C++
+This is a project to review my knowledge of C++.
 
 ## Compile
 
@@ -12,4 +12,4 @@ g++ bank.cpp core.cpp -o bank -lwinmm
 
 ## Run
 
-Click on the bank.exe file in the src folder after compile
+Click on the bank.exe file in the src folder after compile.
