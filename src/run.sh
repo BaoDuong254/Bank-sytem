@@ -1,0 +1,1 @@
+g++ bank.cpp core.cpp -o bank -lwinmm && ./bank
