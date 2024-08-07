@@ -173,7 +173,7 @@ void menu()
         if (cin.peek() == '\n')
         {
             if (sound)
-                PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             GoTo(cen - 14, 17);
@@ -185,7 +185,7 @@ void menu()
             if (opt == "1")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 system("cls");
                 account();
                 break;
@@ -193,7 +193,7 @@ void menu()
             else if (opt == "2")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 system("cls");
                 cin.ignore();
                 repeat = false;
@@ -203,7 +203,7 @@ void menu()
             else if (opt == "3")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 repeatForgot = false;
                 cin.ignore();
                 forgotPass();
@@ -212,13 +212,13 @@ void menu()
             else if (opt == "4")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 exitApp();
             }
             else if (opt == "T")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 if (sound)
                 {
                     sound = false;
@@ -253,7 +253,7 @@ void menu()
             else
             {
                 if (sound)
-                    PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 GoTo(cen - 14, 17);
                 cout << "* The option is invalid. Please try again!!!";
                 GoTo(cen - 17, 17);
@@ -345,7 +345,7 @@ void forgotPass()
             break;
         }
     }
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream in("../data/userInfo.txt");
     string info, password;
     bool check = false;
     while (getline(in, info))
@@ -371,7 +371,7 @@ void forgotPass()
     if (check)
     {
         if (sound)
-            PlaySound(TEXT("success.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            PlaySound(TEXT("../sound/success.wav"), NULL, SND_FILENAME | SND_ASYNC);
         GoTo(cen - 22, 13);
         for (int i = 0; i < 27; ++i)
         {
@@ -383,7 +383,7 @@ void forgotPass()
     else
     {
         if (sound)
-            PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
         repeatForgot = true;
         cin.ignore();
         forgotPass();
@@ -419,7 +419,7 @@ void exitApp()
     GoTo(cen - 30, 10);
     cout << "Thanks for your visit. The program will exit in   second";
     if (sound)
-        PlaySound(TEXT("end.wav"), NULL, SND_FILENAME | SND_ASYNC);
+        PlaySound(TEXT("../sound/end.wav"), NULL, SND_FILENAME | SND_ASYNC);
     for (int i = 5; i >= 0; --i)
     {
         GoTo(cen + 18, 10);
@@ -435,7 +435,7 @@ void account()
 {
     people user;
     char pass;
-    ofstream out("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt", ios::app);
+    ofstream out("../data/userInfo.txt", ios::app);
     drawSecondFrame(31, 100);
     GoTo(cen - 13, 5);
     cout << "== CREATE NEW ACCOUNT ==";
@@ -855,7 +855,7 @@ void account()
     system("cls");
     drawSecondFrame(31, 100);
     if (sound)
-        PlaySound(TEXT("success.wav"), NULL, SND_FILENAME | SND_ASYNC);
+        PlaySound(TEXT("../sound/success.wav"), NULL, SND_FILENAME | SND_ASYNC);
     GoTo(cen - 22, 5);
     cout << "YOUR ACCOUNT HAS BEEN CREATED SUCCESSFULLY";
     Sleep(1500);
@@ -868,7 +868,7 @@ void account()
 //* Log in function
 void login()
 {
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream in("../data/userInfo.txt");
     string name, idCard;
     char pass[50];
     system("cls");
@@ -964,7 +964,7 @@ void login()
         }
         GoTo(cen - 10, 15);
         if (sound)
-            PlaySound(TEXT("success.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            PlaySound(TEXT("../sound/success.wav"), NULL, SND_FILENAME | SND_ASYNC);
         cout << "LOG IN SUCCESSFULLY";
         GoTo(cen - 15, 17);
         system("pause");
@@ -974,7 +974,7 @@ void login()
     else
     {
         if (sound)
-            PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
         repeat = true;
         login();
     }
@@ -984,7 +984,7 @@ void login()
 void display(string username)
 {
     system("cls");
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream in("../data/userInfo.txt");
     string info, d, m, y, dateOfBirth;
     people user;
     bool check = false;
@@ -1118,7 +1118,7 @@ void display(string username)
         if (cin.peek() == '\n')
         {
             if (sound)
-                PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             GoTo(cen - 45, 24);
@@ -1130,14 +1130,14 @@ void display(string username)
             if (opt == "1")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 checkBalance(username);
                 return;
             }
             else if (opt == "2")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 cin.ignore();
                 transfer(username);
                 return;
@@ -1145,7 +1145,7 @@ void display(string username)
             else if (opt == "3")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 system("cls");
                 logout();
                 return;
@@ -1153,7 +1153,7 @@ void display(string username)
             else if (opt == "4")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 menuRepeat = true;
                 system("cls");
                 cin.ignore();
@@ -1163,13 +1163,13 @@ void display(string username)
             else if (opt == "5")
             {
                 if (sound)
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/select.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 exitApp();
             }
             else
             {
                 if (sound)
-                    PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
                 GoTo(cen - 45, 24);
                 cout << "* The option is invalid. Please try again!!!";
                 GoTo(cen - 22, 22);
@@ -1192,7 +1192,7 @@ void logout()
     cout << "Please wait, logging out...";
     Sleep(2000);
     if (sound)
-        PlaySound(TEXT("success.wav"), NULL, SND_FILENAME | SND_ASYNC);
+        PlaySound(TEXT("../sound/success.wav"), NULL, SND_FILENAME | SND_ASYNC);
     GoTo(cen - 10, 15);
     cout << "LOG OUT SUCCESSFULLY";
     GoTo(cen - 15, 17);
@@ -1203,7 +1203,7 @@ void logout()
 }
 long long getMoney(string user)
 {
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream in("../data/userInfo.txt");
     string info, mon;
     while (getline(in, info))
     {
@@ -1272,7 +1272,7 @@ void transfer(string send)
                 cout << " ";
             }
             if (sound)
-                PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                PlaySound(TEXT("../sound/error.wav"), NULL, SND_FILENAME | SND_ASYNC);
             GoTo(cen - 20, 13);
             cout << "* You do not have enough money!!!";
             GoTo(cen - 20, 14);
@@ -1368,7 +1368,7 @@ void transfer(string send)
         cout << "*";
     }
     if (sound)
-        PlaySound(TEXT("success.wav"), NULL, SND_FILENAME | SND_ASYNC);
+        PlaySound(TEXT("../sound/success.wav"), NULL, SND_FILENAME | SND_ASYNC);
     GoTo(cen - 15, 19);
     cout << "AMOUNT SUCCESSFULLY TRANSFERRED";
     moneyProcess(moneySend, send, receive);
@@ -1381,7 +1381,7 @@ void transfer(string send)
 
 void moneyProcess(long long money, string sent, string received)
 {
-    ifstream file("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream file("../data/userInfo.txt");
     vector<string> lines;
     string info;
     while (getline(file, info))
@@ -1410,7 +1410,7 @@ void moneyProcess(long long money, string sent, string received)
             line = line.substr(0, lastDashPos + 1) + to_string(currentMoney);
         }
     }
-    ofstream outFile("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ofstream outFile("../data/userInfo.txt");
     for (const string &line : lines)
     {
         outFile << line << "\n";
@@ -1447,7 +1447,7 @@ void checkBalance(string user)
     cout << "AMOUNT";
     GoTo(cen + 24, 10);
     cout << "TIME";
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/transaction.txt");
+    ifstream in("../data/transaction.txt");
     string temp;
     int cnt = 0, newline = 0;
     while (getline(in, temp))
@@ -1510,7 +1510,7 @@ void checkBalance(string user)
 
 void transaction(long long money, string sent, string received)
 {
-    ofstream out("C:/Users/Admin/Desktop/cppProject/data/transaction.txt", ios::app);
+    ofstream out("../data/transaction.txt", ios::app);
     out << sent << "-" << received << "-" << money << "-" << printCurrentTime();
     out.close();
 }
@@ -1529,7 +1529,7 @@ int IDcard()
 
 bool checkExistUser(string user)
 {
-    ifstream in("C:/Users/Admin/Desktop/cppProject/data/userInfo.txt");
+    ifstream in("../data/userInfo.txt");
     string info;
     while (getline(in, info))
     {
